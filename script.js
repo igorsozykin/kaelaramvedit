@@ -56,12 +56,16 @@ const video = document.getElementById('cyberPlayer');
             }
         });
 
-        fullscreenBtn.addEventListener('click', () => {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) { /* Safari */
-                video.webkitRequestFullscreen();
-            } else if (video.msRequestFullscreen) { /* IE11 */
-                video.msRequestFullscreen();
-            }
-        });
+// Полноэкранный режим
+fullscreenBtn.addEventListener('click', () => {
+    // ВАЖНО: Разворачиваем сам элемент <video>, а не контейнер .video-wrapper
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { /* iOS Safari */
+        video.webkitRequestFullscreen();
+    } else if (video.mozRequestFullScreen) { /* Firefox */
+        video.mozRequestFullScreen();
+    } else if (video.msRequestFullscreen) { /* IE/Edge */
+        video.msRequestFullscreen();
+    }
+});
