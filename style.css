@@ -255,3 +255,105 @@ video {
     font-weight: 400;
     letter-spacing: 1px;
 }
+
+/* --- АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ --- */
+
+@media (max-width: 768px) {
+    /* 1. Уменьшаем заголовок, чтобы он не ломал ширину экрана */
+    h1 {
+        font-size: 3rem;
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    /* 2. Сужаем отступы основного контейнера */
+    .container {
+        padding: 1rem;
+        width: 95%;
+    }
+
+    /* 3. Перестройка панели управления плеером */
+    .controls {
+        flex-wrap: wrap; /* Разрешаем перенос элементов на новые строки */
+        padding: 10px 15px;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    /* Поднимаем прогресс-бар наверх и растягиваем на 100% ширины */
+    .progress-container {
+        width: 100%;
+        flex-basis: 100%;
+        order: -1; /* Заставляет элемент встать первым в flex-контейнере */
+        margin-bottom: 8px;
+        height: 6px; /* Делаем чуть толще для тачскрина */
+    }
+
+    /* 4. Компактные кнопки */
+    .btn {
+        font-size: 1.1rem;
+        padding: 4px 12px;
+        letter-spacing: 1px;
+    }
+
+    /* Таймер прижимаем влево, а остальные кнопки отталкиваем вправо */
+    .time-display {
+        font-size: 1rem;
+        margin-right: auto; 
+    }
+
+    /* 5. Адаптация кибер-футера (если ты добавишь в него классы из предыдущего шага) */
+    .cyber-footer {
+        flex-direction: column;
+        gap: 15px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+/* Дополнительные корректировки для совсем узких экранов (iPhone SE и т.д.) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .btn {
+        font-size: 1rem;
+        padding: 4px 8px;
+    }
+}
+
+/* --- СТИЛИ ДЛЯ ПОЛНОЭКРАННОГО РЕЖИМА --- */
+video:fullscreen {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: contain; /* Чтобы видео не обрезалось, а вписывалось в экран */
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: #000;
+}
+
+video:-webkit-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: contain;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: #000;
+}
+
+video:-moz-full-screen {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: contain;
+    border: none !important;
+    border-radius: 0 !important;
+    background-color: #000;
+}
