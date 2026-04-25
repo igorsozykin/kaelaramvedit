@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私の友人へ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div class="urban-background">
+        <div class="city-grid"></div>
+        <div class="light-trail red-trail t-1"></div>
+        <div class="light-trail red-trail t-2"></div>
+        <div class="light-trail blue-trail t-3"></div>
+        <div class="light-trail yellow-trail t-4"></div>
+        <div class="light-trail blue-trail t-5"></div>
+    </div>
+
+    <div class = "urban-background-animated">
+        <video class="bg-video" src="./assets/animated_background_v2.mp4" autoplay loop muted playsinline></video>
+    </div>
+
+    <main class="container">
+        <h1>HAPPY // BIRTHDAY</h1>
+        
+        <div class="video-wrapper">
+            <video id="cyberPlayer" src="./assets/After Dark [AMV].mp4" poster="https://via.placeholder.com/900x500/0f172a/00d2ff?text=SYSTEM+ONLINE"></video>
+            
+            <div class="controls">
+                <button class="btn" id="playPauseBtn">PLAY</button>
+                <div class="progress-container" id="progressContainer">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+                <div class="time-display" id="timeDisplay">00:00</div>
+                <button class="btn" id="muteBtn">MUTE</button>
+                <button class="btn" id="fullscreenBtn">[ ]</button>
+            </div>
+        </div>
+    </main>
+    <footer class="">
+        
+    </footer>
+    <script src = "./script.js">
+
+    </script>
+</body>
+</html>
